@@ -17,7 +17,6 @@ import {
 import { debounce } from "lodash";
 
 function Player() {
-    // const currTrack
 
     const spotifyApi = useSpotify();
     const { data: session, status } = useSession();
@@ -25,7 +24,7 @@ function Player() {
     const [isPlaying, setisPlaying] = useRecoilState(isPlayingState);
     const [volume, setVolume] = useState(50);
 
-    const songInfo = useSongInfo();
+    const songInfo = useSongInfo(currTrackId);
 
     const fetchSongInfo = () => {
         if (!songInfo) {
@@ -48,7 +47,7 @@ function Player() {
 
     const handlePlayPause = () => {
         spotifyApi.getMyCurrentPlaybackState().then((data) => {
-            if (data.body.is_playing) {
+            if (data.body?.is_playing) {
                 spotifyApi.pause();
                 setisPlaying(false);
             } else {
