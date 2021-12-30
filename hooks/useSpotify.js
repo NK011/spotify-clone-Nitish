@@ -8,7 +8,7 @@ const spotifyApi = new SpotifyWebApi({
 });
 
 function useSpotify() {
-    const { data: session } = useSession();
+    const { data: session, status } = useSession();
 
     useEffect(() => {
         if (session) {
