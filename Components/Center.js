@@ -39,7 +39,7 @@ function Center() {
     }, [playListId]);
 
     return (
-        <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide md:ml-36">
+        <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide md:ml-40">
             <header>
                 {show ? null : (
                     <div
@@ -74,9 +74,9 @@ function Center() {
                     className="h-44 w-44 shadow-2xl"
                 />
                 <div>
-                    <p>Playlist</p>
+                    <p>PLAYLIST</p>
                     <h1 className="text-xl md:text-2xl lg:text-5xl font-bold">
-                        PlayList Name
+                        {currPlaylist?.name}
                     </h1>
                 </div>
             </section>
