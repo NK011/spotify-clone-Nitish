@@ -39,7 +39,7 @@ function Center() {
     }, [playListId]);
 
     return (
-        <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide">
+        <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide md:ml-36">
             <header>
                 {show ? null : (
                     <div

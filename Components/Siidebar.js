@@ -35,16 +35,18 @@ function Siidebar() {
         <div
             className={` ${
                 show ? "showSidebar" : "hideSideBar"
-            } md:inline-block h-screen text-gray-500 p-5 text-xs border-r border-gray-900 overflow-y-scroll scrollbar-hide pb-36`}
+            } md:showSidebar h-screen text-gray-500 p-5 text-xs border-r border-gray-900 overflow-y-scroll scrollbar-hide pb-36`}
         >
             <div className="space-y-4">
-                <button
-                    className="flex items-center space-x-2 hover:text-white"
-                    onClick={() => setShow(false)}
-                >
-                    <XIcon className="h-5 w-5 text-red-800" />
-                    <p>Close</p>
-                </button>
+                {show ? (
+                    <button
+                        className="flex items-center space-x-2 hover:text-white"
+                        onClick={() => setShow(false)}
+                    >
+                        <XIcon className="h-5 w-5 text-red-800" />
+                        <p>Close</p>
+                    </button>
+                ) : null}
                 <button className="flex items-center space-x-2 hover:text-white">
                     <HomeIcon className="h-5 w-5" />
                     <p>Home</p>
