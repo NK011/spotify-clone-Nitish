@@ -12,6 +12,7 @@ export async function middleware(req) {
     });
 
     const { pathname } = req.nextUrl;
+    
     //if token is there or its a new auth request
     if (pathname.includes("/api/auth") || token) {
         return NextResponse.next();
